@@ -1,0 +1,92 @@
+
+<!--
+<table>
+    <div ng-repeat="expense in expenses">
+        <div class="form-row">
+            <div class="form-group col-md-1"style="margin-top:5px">
+            <label>{{expense.employee.identityNumber}}</label>
+            <input type="int" class="form-control"  id="ID1"> <p></p>
+
+        </div>
+
+        <div class="form-group col-md-2" style="margin-top:5px">
+            <label for="tarih1">{{expense.expenseSet.subExpenseDate}}</label>
+            <input type="date" class="form-control" id="tarih1">
+
+        </div>
+        <div class="form-group col-md-2"style="margin-top:5px">
+            <label for="masrafTipi1">{{expense.expenseSet.expenseTypeName}}</label>
+            <input type="text" class="form-control" id="masrafTipi1">
+        </div>
+        <div class="form-group col-md-4"style="margin-top:0px">
+            <label for="aciklama1">{{expense.expStatement}}</label>
+            <input type="text" class="form-control" id="aciklama1">
+        </div>
+        <div class="form-group col-md-1"style="margin-top: 3px">
+            <label for="tutar1">{{expense.expenseAmount}}</label>
+            <input type="int" class="form-control" id="tutar1">
+        </div>
+        <div class="form-group col-md-2" style="margin-top:20px">
+            <a href="#/createExpense"><button type class="btn btn-primary">Detayla</button></a>
+
+        </div>
+
+    </div>
+
+    </div>
+</table>
+
+-->
+
+<div class="col-md-12">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th class="col-sm-1">ID</th>
+            <th class="col-sm-2">Tarih</th>
+            <th class="col-sm-3">Açıklama</th>
+            <th class="col-sm-2">Onay Durumu</th>
+            <th class="col-sm-1">Detayla </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="expense in expenses">
+            <td>{{expense.employee.identityNumber}} </td>
+            <td>{{expense.dateCreateExp | date}}</td>
+            <td>{{expense.expStatement}} </td>
+            <td>{{expense.approvalStatus.approvalStatus}} </td>
+            <td><a href="#/createExpense"><button type class="btn btn-primary">Detayla</button></a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="col-md-12">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th class="col-sm-1">ID</th>
+            <th class="col-sm-2">Tarih</th>
+            <th class="col-sm-3">Açıklama</th>
+            <th class="col-sm-2">Onay Durumu</th>
+            <th class="col-sm-1">Detayla </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="approvalWaitingExpenses in approvalWaitingExpenses">
+            <td>{{expense.employee.identityNumber}} </td>
+            <td>{{expense.dateCreateExp | date}}</td>
+            <td>{{expense.expStatement}} </td>
+            <td>{{expense.approvalStatus.approvalStatus}} </td>
+            <td><a href="#/createExpense"><button type class="btn btn-primary">Detayla</button></a></td>
+
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+

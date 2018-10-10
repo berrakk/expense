@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-8">
+            <carousel interval="myInterval" style="margin-top: 100px;margin-right:750px;width:750px;height:500px">
+                <slide ng-repeat="slide in slides" active="slide.active" ng-animate="false">
+                    <img ng-src="{{slide.image}}?{{$index}}" style="max-height:600px; margin:0 auto;width:750px">
+                    <div class="carousel-caption">
+                        <h4>Slide {{$index}}</h4>
+                        <p>{{slide.text}}</p>
+                    </div>
+                </slide>
+            </carousel>
+
+        </div>
+        <div ng-hide="isEmployeeLoggedin" class="col-md-4" style="padding-top: 100px;padding-left:40px">
+            <label for="uname"><b>USERNAME</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" ng-model="identityNumber" required>
+
+            <label for="psw"><b>PASSWORD</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" ng-model="password" required>
+
+            <button ng-click="login()" type="submit">LOGIN</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <a href="#/signup" class="btn btn-link">Register</a>
+
+
+        </div>
+
+
+        <div ng-show="isEmployeeLoggedin" class="col-md-4" style="padding-top: 100px;padding-left:40px">
+            <h5>Hoş geldin {{name}}!</h5>
+            <h5>TC Kimlik Numaran: {{identityNumber}}!</h5>
+        </div>
+
+        <div ng-show="isEmployeeLoggedin">
+            <button ng-click="signout()" type="submit">Çıkış Yap</button>
+        </div>
+
+
+
+
+    </div>
+
+</div>
