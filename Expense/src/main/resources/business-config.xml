@@ -16,10 +16,10 @@
     <context:component-scan base-package="service.impl"/>
 
 
-    <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource">
-        <property name="URL" value="jdbc:oracle:thin:@bscsdev.tm.turkcell.tgc:3201:BSCSDEV"/>
-        <property name="user" value="TTDE_BILLING"/>
-        <property name="password" value="d_TTDE_BILLING"/>
+    <bean id="dataSource" class="oracle">
+        <property name="URL" value="BAGDC"/>
+        <property name="user" value="Database"/>
+        <property name="password" value="Database"/>
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
